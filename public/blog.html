@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sepia Studio · Blog</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark site-nav fixed-top">
+    <div class="container">
+      <a class="navbar-brand brand-script" href="index.html">sepia</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto text-uppercase">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="blog-header">
+    <div class="container text-center">
+      <h1 class="display-4 fw-bold" data-aos="fade-up">Our Creative Blog</h1>
+      <p class="lead text-muted-light" data-aos="fade-up" data-aos-delay="120">Stories, guides & inspiration from portrait photography</p>
+    </div>
+  </section>
+
+  <section class="container py-5">
+    <div id="blogGrid" class="row g-4"></div>
+  </section>
+
+  <footer class="site-footer"><div class="container d-flex justify-content-between"><div>sepia</div><div class="yr-js"></div></div></footer>
+
+<script>
+  const posts = [
+    {
+      title: "Golden Hour Portraits — Capture the Magic Light",
+      excerpt: "Master the warm, flattering light just after sunrise and before sunset. Planning + composition tips inside.",
+      image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+      link: "https://girlmeansbusiness.com/how-to-create-engaging-content-for-your-photography-blog-tips-tricks/"
+    },
+    {
+      title: "Behind the Scenes: Portrait Session Workflow",
+      excerpt: "From moodboards to deliverables — our workflow to run a smooth portrait session.",
+      image: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg",
+      link: "https://shootandthrive.com/how-to-make-your-blogs-better/"
+    },
+    {
+      title: "Composition for Portraits: Rules & Creative Breaks",
+      excerpt: "Use composition to tell a story — when to follow rules and when to break them for stronger emotion.",
+      image: "https://images.unsplash.com/photo-1544006659-f0b21884ce1d",
+      link: "https://progradedigital.com/the-photographers-guide-to-blogging/"
+    },
+    {
+      title: "Editing Workflow Secrets: From RAW to Wow",
+      excerpt: "A practical editing workflow that respects skin tone, luminosity, and mood.",
+      image: "https://images.unsplash.com/photo-1519681393784-d120267933ba",
+      link: "https://blog.pixieset.com/blog/blogging-photography/"
+    }
+  ];
+
+  const grid = document.getElementById("blogGrid");
+  posts.forEach(p => {
+    const col = document.createElement("div");
+    col.className = "col-md-6 col-lg-4";
+    col.setAttribute("data-aos","fade-up");
+    col.innerHTML = `
+      <div class="card blog-card h-100">
+        <img src="${p.image}" alt="${p.title}">
+        <div class="card-body">
+          <h5 class="card-title">${p.title}</h5>
+          <p class="card-text text-muted-light">${p.excerpt}</p>
+          <a href="${p.link}" target="_blank" rel="noopener noreferrer">Read the full piece →</a>
+        </div>
+      </div>`;
+    grid.appendChild(col);
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>AOS.init({duration:800, once:true});</script>
+</body>
+</html>
