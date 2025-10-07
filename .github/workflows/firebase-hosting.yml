@@ -1,0 +1,31 @@
+name: Deploy to Firebase Hosting
+
+on:
+  push:
+    branches:
+      - main   # change if your default branch is 'master'
+  pull_request:
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools
+
+      - name: Build (if needed)
+        run: |
+          echo "Skipping build — add your build command here if you have one"
+        # Example: npm ci && npm run build
+
+      - name: Deploy to Firebase Hosting
+        run: firebase deploy --only hosting --token "${{ secrets.FIREBASE_TOKEN }}"
