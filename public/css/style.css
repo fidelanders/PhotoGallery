@@ -65,7 +65,8 @@ body {
   position: relative;
   background-image:
     linear-gradient(rgba(6, 6, 6, 0.55), rgba(6, 6, 6, 0.85)),
-    url('../assets/images/hero.png');
+    url("/assets/images/hero.png"); 
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-blend-mode: overlay;

@@ -4,7 +4,7 @@
 window.portraits = [];
 
 const totalImages = 148;
-const basePath = "assets/images/vow-renewal/";
+const basePath = "/assets/images/vow-renewal/";
 const title = "Vow Renewal";
 
 for (let i = 1; i <= totalImages; i++) {
