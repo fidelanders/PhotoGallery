@@ -1,0 +1,8 @@
+/* responsive.css */
+@media (max-width: 576px) {
+  .portfolio-item img { height: 220px; }
+  .hero-content h1 { font-size: 1.6rem; }
+}
+@media (min-width: 1200px) {
+  .hero-content { padding: 5rem 1rem; }
+}
